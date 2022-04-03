@@ -1,0 +1,32 @@
+GET http://localhost:3000/
+// Renvoie la page principale
+
+###
+
+GET http://localhost:3000/activites
+// Renvoie la page des activités
+
+###
+
+GET http://localhost:3000/activites
+// Renvoie la page des activités
+
+###
+
+GET http://localhost:3000/products/2
+
+###
+
+POST http://localhost:3000/login
+
+###
+
+POST http://localhost:3000/testPost
+Content-Type: application/json
+
+{
+  "title": "test",
+  "id": 0
+}
+
+###

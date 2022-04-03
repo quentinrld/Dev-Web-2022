@@ -1,0 +1,27 @@
+{
+  "name": "backend-api",
+  "version": "1.0.0",
+  "description": "backend api of a sports nonprofit organization ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Antoine Geonet",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quentinrld/Dev-Web-2022.git"
+  },
+  "bugs": {
+    "url": "https://github.com/quentinrld/Dev-Web-2022/issues"
+  },
+  "homepage": "https://github.com/quentinrld/Dev-Web-2022#readme"
+}
