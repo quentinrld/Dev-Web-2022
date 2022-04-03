@@ -10,12 +10,12 @@
   "author": "Antoine Geonet",
   "license": "ISC",
   "dependencies": {
+    "esm": "^3.2.25",
     "express": "^4.17.3"
   },
   "directories": {
     "test": "tests"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/quentinrld/Dev-Web-2022.git"
