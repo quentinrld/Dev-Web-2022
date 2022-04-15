@@ -1,19 +1,29 @@
+//PAGE PRINCIPALE//
+
 GET http://localhost:3000/
 // Renvoie la page principale
+
 ###
 
 // ACTIVITES ROUTES //
+
 GET http://localhost:3000/activities
 // Renvoie les informations des activités
+
 ###
+
 POST http://localhost:3000/activities/inscription
 // Envoie son inscription à une activité
+
 Content-Type: application/json
 
 {"name":  "Arthur", "activity":  "Tennis"}
+
 ###
+
 POST http://localhost:3000/activities/add
 // Crée une activité et la lie à un animateur
+
 Content-Type: application/json
 
 {
@@ -21,54 +31,80 @@ Content-Type: application/json
   "name": "Baseball"
 }
 ###
+
 GET http://localhost:3000/activities/:userResponsable
 //Renvoie les informations des activités proposées par un responsable
+
 ###
+
 POST http://localhost:3000/activities/update/:actID
 //Met à jour les informations des activités proposées par un responsable
+
 ###
 
 // UTILISATEURS ROUTES //
+
 GET http://localhost:3000/users
 // Renvoie la liste des utilisateurs enregistrés et leurs infos
+
 ###
+
 DELETE http://localhost:3000/user/:userID/delete
 // Supprime l'utilisateur et ses infos
+
 ###
+
 POST http://localhost:3000/user/add
 // Ajoute un utilisateur et ses infos
+
 ###
+
 POST http://localhost:3000/user/:userID/update/droit
 // Met à jour les infos d'un utilisateur
+
 ###
 
 // LOGIN ROUTES //
+
 POST http://localhost:3000/login
 // Renvoie la page de login
+
 ###
 
 // HORAIRES ROUTES //
+
 GET http://localhost:3000/horaire/:id
 // Renvoie l'horaire de l'utilisateur
+
 ###
 
 // PROFIL ROUTES //
+
 GET http://localhost:3000/profile/:id
 // Renvoie les informations de profil de l'utilisateur
+
 ###
 
 // ASBL ROUTES //
+
 GET http://localhost:3000/contact
 // Renvoie les coordonnées de l'ASBL
+
 ###
 
 // ANIMATEURS ROUTES //
+
 GET http://localhost:3000/animateurs
 // Renvoie tous les animateurs et leurs infos
+
 ###
+
 GET http://localhost:3000/animateur/:id
 // Renvoie les informations d'un animateur
+
 ###
+
 POST http://localhost:3000/animateur/:id
 // Met à jour la description d'un animateur
+
 ###
