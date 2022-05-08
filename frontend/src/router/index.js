@@ -8,6 +8,8 @@ import Contact from '@/views/Contact.vue'
 import ActivitiesDescription from '@/views/ActivitiesDescription.vue'
 import ActivitiesCalendar from '@/views/ActivitiesCalendar.vue'
 import MyActivities from '@/views/MyActivities.vue'
+import Login from '@/views/Login.vue'
+import Signin from '@/views/Signin.vue'
 //import PNF from '../views/PNF.vue'
 
 const routes = [
@@ -50,6 +52,16 @@ const routes = [
     path: '/Contacts',
     name: 'Contacts',
     component: Contact
+  },
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/Signin',
+    name: 'Signin',
+    component: Signin
   },
   //redirects
   {

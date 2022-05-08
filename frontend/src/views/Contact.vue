@@ -1,11 +1,13 @@
 <template>
-<br /><br /><br /><br /><br />
+<header>
+  <br /><br /><br /><br /><br />
   <h1>page des contacts</h1>
+</header>
 </template>
 
 <script>
 export default {
-
+  name: 'Contacts'
 }
 </script>
 

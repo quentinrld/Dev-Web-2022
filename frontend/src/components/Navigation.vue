@@ -10,6 +10,7 @@
                 <li><router-link class="link" :to="{ name: 'Profile'}">Profil</router-link></li>
                 <li><router-link class="link" :to="{ name: 'Dons'}">Dons</router-link></li>
                 <li><router-link class="link" :to="{ name: 'Contacts'}">Contact</router-link></li>
+                <li><router-link class="link" :to="{ name: 'Login'}"><i class="fa fa-sign-in" aria-hidden="true"></i></router-link></li>
             </ul>
             <div class="icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" :class="{'icon-active': mobileNav}"></i>
