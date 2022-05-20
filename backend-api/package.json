@@ -10,8 +10,10 @@
   "author": "Antoine Geonet",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "esm": "^3.2.25",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3"
   },
   "directories": {
     "test": "tests"
