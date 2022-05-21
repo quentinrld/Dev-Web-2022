@@ -6,10 +6,10 @@ const activity_controller = require('../controllers/activityController');
 
 /// ACTIVITIES ROUTES ///
 
-// GET home page
+// GET all activities
 router.get('/', activity_controller.activity_get);
 
-// GET activities
+// GET specific activity
 router.get('/:id', activity_controller.activity_id_get);
 
 // POST add an activity
@@ -20,6 +20,9 @@ router.post('/update/:id', activity_controller.activity_update_post);
 
 // GET delete an activity
 router.get('/delete/:id', activity_controller.activity_delete_post);
+
+// GET userResponsable of an activity
+router.get('/:userId', activity_controller.activity_userId_get);
 
 // POST inscription to an activity
 router.post('/inscription', activity_controller.activity_inscription_post);

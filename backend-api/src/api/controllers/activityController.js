@@ -1,5 +1,3 @@
-//const Activities = require('../models/activities')
-const Activities = require('../helpers/fictionalDatabase')
 const Queries = require('../services/activitiesQuery')
 
 exports.activity_get = async function(req, res) {
@@ -20,7 +18,7 @@ exports.activity_add_post = function(req, res) {
 };
 
 exports.activity_update_post = function(req, res) {
-    console.log(req.body);
+    Queries.update_activity_post(req.params.id, req.body);
     res.sendStatus(200);
 };
 
@@ -33,3 +31,7 @@ exports.activity_inscription_post = function(req, res) {
     console.log(req.body);
     res.sendStatus(200);
 };
+
+exports.activity_userId_get = async function (req, res) {
+    res.send(await Queries.get_activities_id_query(req.params.id, res));
+}

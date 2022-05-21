@@ -20,28 +20,37 @@ Content-Type: application/json
 GET http://localhost:3000/activities/delete/5
 // Supprime une activité
 ###
-POST http://localhost:3000/activities/inscription
+POST http://localhost:3000/activities/update/1
+//Met à jour les informations d'une activité
+Content-Type: application/json
+
+{"sportName": "hockey", "sportDesc": "hockey sur glace", "placeID":  1}
+###
+//POST http://localhost:3000/inscription/activities
 // Envoie son inscription à une activité
 ###
-GET http://localhost:3000/activities/:userResponsable
+//GET http://localhost:3000/activities/:userResponsable
 //Renvoie les informations des activités proposées par un responsable
-###
-POST http://localhost:3000/activities/update/
-//Met à jour les informations des activités proposées par un responsable
 ###
 // UTILISATEURS ROUTES //
 
 GET http://localhost:3000/users
 // Renvoie la liste des utilisateurs enregistrés et leurs infos
 ###
-DELETE http://localhost:3000/user/:userID/delete
+GET http://localhost:3000/users/:userId
+// Renvoie la liste des utilisateurs enregistrés et leurs infos
+###
+GET http://localhost:3000/users/delete/:userId
 // Supprime l'utilisateur et ses infos
 ###
-POST http://localhost:3000/user/add
+POST http://localhost:3000/users/add
 // Ajoute un utilisateur et ses infos
 ###
-POST http://localhost:3000/user/:userID/update/droit
+POST http://localhost:3000/users/update/:userId
 // Met à jour les infos d'un utilisateur
+###
+POST http://localhost:3000/users/rights/:userId
+// Met à jour les droits d'un utilisateur
 ###
 // LOGIN ROUTES //
 

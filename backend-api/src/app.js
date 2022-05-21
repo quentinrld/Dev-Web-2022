@@ -5,6 +5,7 @@ const app = express();
 
 const indexRouter = require('./api/routes/index')
 const activitiesRouter = require('./api/routes/activities')
+const usersRouter = require('./api/routes/users')
 const corsOptions = {
     origin: 'http://localhost:8080',
     optionsSuccessStatus: 200, // For legacy browser support
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/', indexRouter);
 app.use('/activities', activitiesRouter);
+app.use('/users', usersRouter);
 
 app.use(cors({
     origin: 'http://localhost:8080'
