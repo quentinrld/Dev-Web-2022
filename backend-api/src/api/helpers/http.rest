@@ -40,46 +40,30 @@ GET http://localhost:3000/users
 GET http://localhost:3000/users/:userId
 // Renvoie la liste des utilisateurs enregistrés et leurs infos
 ###
-GET http://localhost:3000/users/delete/:userId
+GET http://localhost:3000/users/delete/2
 // Supprime l'utilisateur et ses infos
 ###
 POST http://localhost:3000/users/add
 // Ajoute un utilisateur et ses infos
+Content-Type: application/json
+
+{"userName":"antoine", "userLastName":"Geonet", "mailAdd":"a@a.a", "password": "voiture",
+  "rue":"chemin du corbeau","numero":4,"codepost":1300,"villenom": "wavre","droitID":1}
 ###
-POST http://localhost:3000/users/update/:userId
+POST http://localhost:3000/users/update/1
 // Met à jour les infos d'un utilisateur
+Content-Type: application/json
+
+{"userName":"quentin", "userLastName":"roeland", "mailAdd":"a@a.a", "password": "voiture", "addressID": 1,
+  "rue":"chemin du corbeau","numero":4,"codepost":1000,"villenom": "bruxelles", "oldCodepost": 1000}
 ###
-POST http://localhost:3000/users/rights/:userId
+POST http://localhost:3000/users/rights/1
 // Met à jour les droits d'un utilisateur
+Content-Type: application/json
+
+{"droitID": 1}
 ###
 // LOGIN ROUTES //
 
 POST http://localhost:3000/login
 // Renvoie la page de login
-###
-// HORAIRES ROUTES //
-
-GET http://localhost:3000/horaire/:id
-// Renvoie l'horaire de l'utilisateur
-###
-// PROFIL ROUTES //
-
-GET http://localhost:3000/profile/:id
-// Renvoie les informations de profil de l'utilisateur
-###
-// ASBL ROUTES //
-
-GET http://localhost:3000/contact
-// Renvoie les coordonnées de l'ASBL
-###
-// ANIMATEURS ROUTES //
-
-GET http://localhost:3000/animateurs
-// Renvoie tous les animateurs et leurs infos
-###
-GET http://localhost:3000/animateur/:id
-// Renvoie les informations d'un animateur
-###
-POST http://localhost:3000/animateur/:id
-// Met à jour la description d'un animateur
-###

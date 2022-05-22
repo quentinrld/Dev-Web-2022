@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const url = "http://localhost:3000/activities/";
 
-class ActiviteService {
+class Activities {
     // GET activities
     static GetActivities() {
         return new Promise(async (resolve, reject) => {
@@ -35,4 +35,4 @@ class ActiviteService {
     }
 }
 
-export default ActiviteService;
+export default Activities;

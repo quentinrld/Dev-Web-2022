@@ -14,18 +14,19 @@
       {{ activity }}
     </li>
   </div>
-  <form>
-    <label for="nameSport">Intitulé du sport</label>
-    <input id="nameSport" type="text" name="actname" v-model="actname">
-    <label for="idSport">Id du sport</label>
-    <input id="idSport" type="number" name="actID" v-model="actID">
-    <label for="descSport">Description du sport</label>
-    <input id="descSport" type="text" name="actDesc" v-model="actDesc">
+  <form action="http://localhost:3000/activities/add" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password">
+    <button type="submit">Register</button>
   </form>
 </template>
 
 <script>
-import ActiviteService from "../activiteService.js";
+import Activities from "./Activities.js";
 
 export default {
   name: 'Activities',
@@ -33,20 +34,19 @@ export default {
     return {
       activities: [],
       error: '',
-      text: '',
-      actname: ""
+      text: ''
     }
   },
   async created() {
     try {
-      this.activities = await ActiviteService.GetActivities();
+      this.activities = await Activities.GetActivities();
     } catch(err) {
       this.error = err.message;
     }
   },
   methods :{
     addActivity() {
-      ActiviteService.InsertActivity(this.actname)
+      Activities.InsertActivity()
     }
   }
 }
