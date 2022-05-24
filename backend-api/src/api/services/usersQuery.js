@@ -1,23 +1,12 @@
-const mysql = require("mysql2");
-
-let con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "hi2azOv!!",
-    database: "asbl_extr_aime"
-});
-
-con.connect(function (err){
-    if (err) throw err;
-    console.log("Connected to the database");
-});
+const con = require('./index');
 
 // Get all users and info in the db
 exports.get_users_query = async function() {
-    let columns = "userID, userName, userLastName, mailAdd, addressID, rue, numero, codepost, droitName";
+    let columns = 'userID, userName, userLastName, user.addressID, rue, numero, address.codepost, villenom, droitName';
     let sql = `
 SELECT ${columns} FROM user 
 INNER JOIN address ON user.addressID = address.addressID 
+INNER JOIN ville ON address.codepost = ville.codepost
 INNER JOIN droit ON user.droitID = droit.droitID`;
     return new Promise((resolve, reject) => {
         con.query(sql, function (err, result, fields) {
@@ -32,10 +21,11 @@ INNER JOIN droit ON user.droitID = droit.droitID`;
 
 // Get a specific user
 exports.get_user_query = async function(id) {
-    let columns = 'userID, userName, userLastName, mailAdd, rue, numero, codepost, droitName';
+    let columns = 'userID, userName, userLastName, mailAdd, password, user.addressID, rue, numero, address.codepost, villenom, droitName';
     let sql = `
 SELECT ${columns} FROM user 
 INNER JOIN address ON user.addressID = address.addressID 
+INNER JOIN ville ON address.codepost = ville.codepost
 INNER JOIN droit ON user.droitID = droit.droitID
 WHERE userID = '${id}'`;
     return new Promise((resolve, reject) => {
@@ -65,15 +55,15 @@ exports.add_user_query = function(data) {
     });
     data.userName = String(data.userName);
     data.userLastName = String(data.userLastName);
-    data.mailAdd = String(data.mailAdd);
+    data.email = String(data.email);
     data.password = String(data.password);
-    data.droitID = Number(data.droitID);
+    data.droitID = 3;
     let sql_addressID = `SELECT addressID FROM address WHERE rue = '${data.rue}' AND numero = ${data.numero} AND codepost = ${data.codepost}`;
     con.query(sql_addressID, function (err, result, fields) {
         if (err) throw err;
         result[0].addressID = Number(result[0].addressID);
         let sql_add_user = `INSERT INTO user (userName, userLastName, mailAdd, password, addressID, droitID) 
-            VALUES ('${data.userName}', '${data.userLastName}', '${data.mailAdd}', '${data.password}', ${result[0].addressID}, ${data.droitID})`;
+            VALUES ('${data.userName}', '${data.userLastName}', '${data.email}', '${data.password}', ${result[0].addressID}, ${data.droitID})`;
         con.query(sql_add_user, function (err, result, fields) {
             if (err) throw err;
         });
@@ -127,7 +117,7 @@ exports.update_user_query = function (id, data) {
         if (err) throw err;
         console.log("1 record updated");
     });
-}
+};
 
 exports.update_user_rights_query = function (id, data) {
     data.droitID = Number(data.droitID);
@@ -136,4 +126,4 @@ exports.update_user_rights_query = function (id, data) {
         if (err) throw err;
         console.log("rights updated");
     });
-}
+};

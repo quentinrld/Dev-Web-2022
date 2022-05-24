@@ -1,16 +1,4 @@
-const mysql = require("mysql2");
-
-let con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "hi2azOv!!",
-    database: "asbl_extr_aime"
-});
-
-con.connect(function (err){
-    if (err) throw err;
-    console.log("Connected to the database");
-});
+const con = require('./index');
 
 // Get all activities and info in the db
 exports.get_activities_query = async function() {

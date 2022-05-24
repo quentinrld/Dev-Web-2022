@@ -14,7 +14,6 @@ exports.user_add_post = function(req, res) {
     console.log("Sending data...");
     Queries.add_user_query(req.body);
     console.log("Data successfully passed in the database");
-    res.sendStatus(200, "The user was added to the database");
 };
 
 exports.user_delete_get = function (req, res) {

@@ -4,6 +4,7 @@
   "description": "backend api of a sports nonprofit organization ",
   "main": "src/app.js",
   "scripts": {
+    "devStart": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -31,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/quentinrld/Dev-Web-2022/issues"
   },
-  "homepage": "https://github.com/quentinrld/Dev-Web-2022#readme"
+  "homepage": "https://github.com/quentinrld/Dev-Web-2022#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }

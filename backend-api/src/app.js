@@ -25,9 +25,10 @@ const registerRouter = require('./api/routes/register');
 const loginRouter = require('./api/routes/login');
 
 const corsOptions = {
-    origin: 'http://localhost:8080',
-    optionsSuccessStatus: 200, // For legacy browser support
+    origin: 'http://localhost:8080'
 };
+
+app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());
@@ -38,8 +39,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // Routes
 app.use('/', indexRouter);
@@ -47,10 +48,6 @@ app.use('/activities', activitiesRouter);
 app.use('/users', usersRouter);
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
-
-app.use(cors({
-    origin: 'http://localhost:8080'
-}));
 
 // Port listening
 app.listen(process.env.PORT || 3000, () => console.log('App is available on http://localhost:3000'));
