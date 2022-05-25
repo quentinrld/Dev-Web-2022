@@ -1,19 +1,27 @@
 <template>
-<header>
-  <br /><br /><br /><br /><br />
-  <h1>Page des activites</h1><br /><br />
-  <p>Bienvenue dans l'onglet activitées vous pouvez consulter les différentes activitées qu'on proposé ainsi que les 
-    horraires auxquels ils se déroullent. Vous pouvez égallement l'utiliser pour vous inscrire aux activitées 
-    proposées</p><br />
-  <button @click="$router.push({name: 'DescActi'})">Voir les différentes activitées proposées</button><br /><br />
-  <button @click="$router.push({name: 'CalActi'})">Consulter les horraires des activitées à venir</button><br /><br />
-  <button @click="$router.push({name: 'MyActivities'})">Consulter vos activitées à venir</button><br /><br /></header>
+  <header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Page des activités</h1>
+    <p>
+      Bienvenue dans l'onglet des activités. Vous pouvez consulter les différentes activités qu'on propose ainsi que les
+      horaires auxquels ils se déroulent. Vous pouvez également l'utiliser pour vous inscrire aux activités proposées.
+    </p>
+    <button @click="$router.push({name: 'DescActi'})">Voir les différentes activités proposées</button>
+    <button @click="$router.push({name: 'CalActi'})">Consulter les horaires des activités à venir</button>
+    <button @click="$router.push({name: 'MyActivities'})">Consulter vos activités à venir</button>
+  </header>
+  <body>
   <p class="error" v-if="error">{{ error }}</p>
-  <div class="activities">
-    <li v-for="activity in activities">
-      {{ activity }}
+  <ul>
+    <li v-for="activity in activities" :key="activity">
+      {{ activity.actname }}{{ activity.actDesc }}
     </li>
-  </div>
+  </ul>
+  </body>
 </template>
 
 <script>

@@ -1,22 +1,9 @@
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
-}
-
 const express = require('express');
-const app = express();
 const cors = require('cors');
-const flash = require('express-flash');
 const session = require('express-session');
 const passport = require('passport');
 
-const users = require('./api/controllers/registerController').tempDb;
-
-const initializePassport = require('./config/passport-config');
-initializePassport(
-    passport,
-    email => users.find(user => user.email === email),
-    id => users.find(user => user.id === id)
-);
+require('dotenv').config();
 
 const indexRouter = require('./api/routes/index');
 const activitiesRouter = require('./api/routes/activities');
@@ -24,23 +11,32 @@ const usersRouter = require('./api/routes/users');
 const registerRouter = require('./api/routes/register');
 const loginRouter = require('./api/routes/login');
 
+const sessions = [];
+
 const corsOptions = {
     origin: 'http://localhost:8080'
 };
+
+const app = express();
 
 app.use(cors(corsOptions));
 
 // Middleware
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
-app.use(flash());
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
+app.use(express.urlencoded({extended: true}));
+//app.use(flash());
 // app.use(passport.initialize());
 // app.use(passport.session());
+
+// Session
+const oneHour = 1000 * 60 * 60;
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: sessions,
+    cookie: { maxAge: oneHour }
+}));
 
 // Routes
 app.use('/', indexRouter);
