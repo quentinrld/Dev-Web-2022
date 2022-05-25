@@ -127,3 +127,18 @@ exports.update_user_rights_query = function (id, data) {
         console.log("rights updated");
     });
 };
+
+exports.get_admin_query = async function() {
+    let sql = `SELECT userName, userLastName, mailAdd, actname
+        FROM user, \`activity-orga\`, activity
+        WHERE droitID < 3`;
+    return new Promise((resolve, reject) => {
+        con.query(sql, function (err, result, fields) {
+            try {
+                resolve(result);
+            } catch (err) {
+                reject(err);
+            }
+        });
+    });
+};

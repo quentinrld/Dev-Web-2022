@@ -9,6 +9,9 @@ const user_controller = require('../controllers/userController');
 // GET all users
 router.get('/', user_controller.user_get);
 
+// GET super admin and admin users
+router.get('/admin', user_controller.user_get_admin);
+
 // GET specific user
 router.get('/:id', user_controller.user_id_get);
 

@@ -30,3 +30,8 @@ exports.user_rights_user_update_post = function (req, res) {
     Queries.update_user_rights_query(req.params.id, req.body);
     res.sendStatus(200);
 }
+
+exports.user_get_admin = async function (req, res) {
+    console.log("Get admins...");
+    res.send(await Queries.get_admin_query());
+}

@@ -11,7 +11,7 @@ const usersRouter = require('./api/routes/users');
 const registerRouter = require('./api/routes/register');
 const loginRouter = require('./api/routes/login');
 
-const sessions = [];
+let sessions = [];
 
 const corsOptions = {
     origin: 'http://localhost:8080'
@@ -34,7 +34,6 @@ app.use(session({
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
-    store: sessions,
     cookie: { maxAge: oneHour }
 }));
 
