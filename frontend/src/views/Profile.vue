@@ -6,8 +6,24 @@
 </template>
 
 <script>
+import Profile from "./profile.js";
+
 export default {
-  name: 'Profile'
+  name: 'Profile',
+  data() {
+    return {
+      profile :[],
+      error: '',
+      text: '', 
+    }
+  },
+  async created() {
+    try {
+      this.profiles = await Profile.GetProfile();
+    } catch(err) {
+      this.error = err.message;
+    }
+  }
 }
 </script>
 
