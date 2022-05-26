@@ -22,6 +22,15 @@
     </li>
   </ul>
   </body>
+  <footer class="lien">
+  <hr>
+  <p>Contact ASBL :</p>
+  <ul>
+    <li>Facebook : <a href="https://www.facebook.com/LesExtrAimes/">Les Extr-Aimes asbl</a></li>
+    <li>Mail : <a href="mailto:asbl.extraimes@gmail.com">asbl.extraimes@gmail.com</a></li>
+    <li>Téléphone : <a href="tel:+32 000 00 00 00">+32 000 00 00 00</a></li>
+  </ul>
+</footer>
 </template>
 
 <script>
@@ -52,5 +61,14 @@ export default {
 </script>
 
 <style>
-
+.lien {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  left: 5px;
+  bottom: 0px;
+}
+li {
+  left: 20px;
+}
 </style>

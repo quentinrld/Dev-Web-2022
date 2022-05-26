@@ -7,7 +7,7 @@
   <div class="search">
     <form id="search">
       Search 
-      <input name="query" v-model="searchQuery">
+      <input name="query" type="text" v-model="searchQuery">
     </form>
     <demo-grid :filter-key="searchQuery"></demo-grid>
   </div>
@@ -20,12 +20,6 @@
       <th>Adresse mail</th>
       <th>Responsable de l'activité</th>
     </tr>
-    <tr>
-      <td>ASBL</td>
-      <td>Admin</td>
-      <td><a href="mailto:ASBL.contact@gmail.com">Contact</a></td>
-      <td>Admin</td>
-    </tr>
     <tr v-for="contacts in contact" :key="contacts">
       <td>{{contacts.userLastName}}</td>
       <td>{{contacts.userName}}</td>
@@ -35,6 +29,15 @@
   </table>
   </div>
   </body>
+  <footer class="lien">
+  <hr>
+  <p>Contact ASBL :</p>
+  <ul>
+    <li>Facebook : <a href="https://www.facebook.com/LesExtrAimes/">Les Extr-Aimes asbl</a></li>
+    <li>Mail : <a href="mailto:asbl.extraimes@gmail.com">asbl.extraimes@gmail.com</a></li>
+    <li>Téléphone : <a href="tel:+32 000 00 00 00">+32 000 00 00 00</a></li>
+  </ul>
+</footer>
 </template>
 
 <script>
@@ -57,6 +60,37 @@ export default {
     }
   }
 }
+
+/*const search = new Vue({
+  el: "#search",
+  data: {
+    filter: "",
+    rows: contact,
+  },
+  methode: {
+    highlightMatches(text) {
+      const matchExists = text.
+      toLowerCase().
+      includes(this.filter.toLowerCase());
+      if (!matchExists) return text;
+
+      const re = new RegExp(this.filter, "ig");
+      return text.replace(re, matchedText => `<strong>${matchedText}</strong>`);
+    } },
+  computed: {
+    filteredRows() {
+      return this.rows.filter(row => {
+        const employees = row.employees.toString().toLowerCase();
+        const department = row.department.toLowerCase();
+        const searchTerm = this.filter.toLowerCase();
+
+        return (
+          department.includes(searchTerm) || employees.includes(searchTerm));
+
+      });
+    }
+  }
+})*/
 </script>
 
 <style>
@@ -84,7 +118,16 @@ td {
   height: 50px;
   font-size: 20px;
 };
-
+.lien {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  left: 5px;
+  bottom: 0px;
+}
+li {
+  left: 20px;
+}
   
 
 </style>
