@@ -30,12 +30,12 @@ app.use(express.urlencoded({extended: true}));
 
 // Session
 const oneHour = 1000 * 60 * 60;
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: oneHour }
-}));
+//app.use(session({
+    //secret: process.env.SECRET,
+    //resave: false,
+    //saveUninitialized: true,
+    //cookie: { maxAge: oneHour }
+//}));
 
 // Routes
 app.use('/', indexRouter);
