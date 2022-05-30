@@ -10,9 +10,9 @@
       Bienvenue dans l'onglet des activités. Vous pouvez consulter les différentes activités qu'on propose ainsi que les
       horaires auxquels ils se déroulent. Vous pouvez également l'utiliser pour vous inscrire aux activités proposées.
     </p>
-    <button @click="$router.push({name: 'DescActi'})">Voir les différentes activités proposées</button>
-    <button @click="$router.push({name: 'CalActi'})">Consulter les horaires des activités à venir</button>
-    <button @click="$router.push({name: 'MyActivities'})">Consulter vos activités à venir</button>
+    <!-- <button @click="$router.push({name: 'DescActi'})">Voir les différentes activités proposées</button> -->
+    <!-- <button @click="$router.push({name: 'CalActi'})">Consulter les horaires des activités à venir</button> -->
+    <!-- <button @click="$router.push({name: 'MyActivities'})">Consulter vos activités à venir</button> -->
   </header>
   <body>
   <p class="error" v-if="error">{{ error }}</p>
