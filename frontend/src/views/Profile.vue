@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Profile from "./profile.js";
+import Profile from "./Profile.js";
 
 export default {
   name: 'Profile',

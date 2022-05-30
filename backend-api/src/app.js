@@ -14,7 +14,7 @@ const loginRouter = require('./api/routes/login');
 let sessions = [];
 
 const corsOptions = {
-    origin: 'http://localhost:8080'
+    origin: '*'
 };
 
 const app = express();

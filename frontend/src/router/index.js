@@ -29,7 +29,7 @@ const routes = [
     component: ActivitiesDescription
   },
   {
-    path: '/Activites/Horraires',
+    path: '/Activites/Horaires',
     name: 'CalActi',
     component: ActivitiesCalendar
   },
