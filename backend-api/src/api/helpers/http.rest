@@ -37,7 +37,7 @@ Content-Type: application/json
 GET http://localhost:3000/users
 // Renvoie la liste des utilisateurs enregistrés et leurs infos
 ###
-GET http://localhost:3000/users/:userId
+GET http://localhost:3000/users/2
 // Renvoie la liste des utilisateurs enregistrés et leurs infos
 ###
 GET http://localhost:3000/users/delete/2
