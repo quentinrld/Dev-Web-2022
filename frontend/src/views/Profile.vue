@@ -1,6 +1,5 @@
 <template>
 <header>
-  <br /><br /><br /><br /><br />
   <h1>page des profiles</h1>
 </header>
 </template>
@@ -9,7 +8,7 @@
 import Profile from "./Profile.js";
 
 export default {
-  name: 'Profile',
+  name: 'profile',
   data() {
     return {
       profile :[],

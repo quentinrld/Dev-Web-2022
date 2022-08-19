@@ -1,10 +1,5 @@
 <template>
   <header>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <h1>Page des activités</h1>
     <p>
       Bienvenue dans l'onglet des activités. Vous pouvez consulter les différentes activités qu'on propose ainsi que les
@@ -37,22 +32,13 @@
   </table>
   </div>
   </body>
-  <footer class="lien">
-  <hr>
-  <p>Contact ASBL :</p>
-  <ul>
-    <li>Facebook : <a href="https://www.facebook.com/LesExtrAimes/">Les Extr-Aimes asbl</a></li>
-    <li>Mail : <a href="mailto:asbl.extraimes@gmail.com">asbl.extraimes@gmail.com</a></li>
-    <li>Téléphone : <a href="tel:+32 000 00 00 00">+32 000 00 00 00</a></li>
-  </ul>
-</footer>
 </template>
 
 <script>
 import Activities from "./Activities.js";
 
 export default {
-  name: 'Activities',
+  name: 'activities',
   data() {
     return {
       activities: [],

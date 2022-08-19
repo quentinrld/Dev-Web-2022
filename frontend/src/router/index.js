@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-//import Navigation from '../components/Navigation.vue'
+// import Navigation from '../components/Navigation.vue'
 import Home from '@/views/Home.vue'
 import Activities from '@/views/Activities.vue'
 import Profile from '@/views/Profile.vue'
@@ -15,59 +15,58 @@ import Signin from '@/views/Signin.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    redirect: '/home'
   },
   {
-    path: '/Activites',
-    name: 'Activities',
+    component: Home,
+    path: '/home',
+    name: 'home'
+  },
+  {
+    path: '/activites',
+    name: 'activities',
     component: Activities
   },
   {
-    Path: '/Activites/Description',
-    name: 'DescActi',
+    path: '/activites/description',
+    name: 'descActi',
     component: ActivitiesDescription
   },
   {
-    path: '/Activites/Horaires',
-    name: 'CalActi',
+    path: '/activites/horaires',
+    name: 'calActi',
     component: ActivitiesCalendar
   },
   {
-    path: '/Activites/MesActivites',
-    name: 'MyActivities',
+    path: '/activites/mesActivites',
+    name: 'myActivities',
     component: MyActivities
   },
   {
-    path: '/Profile',
-    name: 'Profile',
+    path: '/profile',
+    name: 'profile',
     component: Profile
   },
   {
-    path: '/Dons',
-    name: 'Dons',
+    path: '/dons',
+    name: 'dons',
     component: Dons
   },
   {
-    path: '/Contacts',
-    name: 'Contacts',
+    path: '/contacts',
+    name: 'contacts',
     component: Contact
   },
   {
-    path: '/Login',
-    name: 'Login',
+    path: '/login',
+    name: 'login',
     component: Login
   },
   {
-    path: '/Signin',
-    name: 'Signin',
+    path: '/signin',
+    name: 'signin',
     component: Signin
   },
-  //redirects
-  {
-    path: '/Home',
-    redirect: '/'
-  }
   //404
   //{
   //  path: '/:catchAll(.*)',

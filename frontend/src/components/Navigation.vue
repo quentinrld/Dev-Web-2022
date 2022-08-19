@@ -2,26 +2,26 @@
     <header :class="{'scrolled-nav': scrolledNav}">
         <nav>
             <div class="branding">
-                <router-link class="link" :to="{ name : 'Home'}"><img src="@/assets/ASBL_icon.png" alt=""></router-link>
+                <router-link class="link" :to="{ name : 'home'}"><img src="@/assets/ASBL_icon.png" alt=""></router-link>
             </div>
             <ul v-show="!mobile" class="navigation">
-                <!--<li><router-link class="link" :to="{ name: 'Home'}">Accueil</router-link></li>-->
-                <li><router-link class="link" :to="{ name: 'Activities'}">Activités</router-link></li>
-                <li><router-link class="link" :to="{ name: 'Profile'}">Profil</router-link></li>
-                <li><router-link class="link" :to="{ name: 'Dons'}">Dons</router-link></li>
-                <li><router-link class="link" :to="{ name: 'Contacts'}">Contact</router-link></li>
-                <li><router-link class="link" :to="{ name: 'Login'}"><i class="fa fa-sign-in" aria-hidden="true"></i></router-link></li>
+                <li><router-link class="link" :to="{ name: 'home'}">Accueil</router-link></li>
+                <li><router-link class="link" :to="{ name: 'activities'}">Activités</router-link></li>
+                <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
+                <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li>
+                <li><router-link class="link" :to="{ name: 'contacts'}">Contact</router-link></li>
+                <li><router-link class="link" :to="{ name: 'login'}"><i class="fa fa-sign-in" aria-hidden="true"></i></router-link></li>
             </ul>
             <div class="icon">
                 <i @click="toggleMobileNav" v-show="mobile" class="fa-solid fa-bars" :class="{'icon-active': mobileNav}"></i>
             </div>
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
-                    <!--<li><router-link class="link" :to="{ name: 'Home'}">Accueil</router-link></li>-->
-                    <li><router-link class="link" :to="{ name: 'Activities'}">Activités</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'Profile'}">Profil</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'Dons'}">Dons</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'Contacts'}">Contact</router-link></li>
+                    <li><router-link class="link" :to="{ name: 'home'}">Accueil</router-link></li>
+                    <li><router-link class="link" :to="{ name: 'activities'}">Activités</router-link></li>
+                    <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
+                    <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li>
+                    <li><router-link class="link" :to="{ name: 'contacts'}">Contact</router-link></li>
                 </ul>
             </transition>
         </nav>
@@ -68,7 +68,6 @@ export default {
             }
             this.mobile = false;
             this.mobileNav = false;
-            return; 
         }
     }
 };
@@ -77,10 +76,10 @@ export default {
 <style lang="scss" scoped>
 
     header {
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0, 0, 0, 0.78);
         z-index: 99;
         width: 100%;
-        position: fixed;
+        // position: fixed; // -> pour avoir la navbar qui descend avec (mais il overlap le dessus de la page A DEBUG)
         transition: 0.5s ease all;
         color: #fff;
 

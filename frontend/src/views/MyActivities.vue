@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'MyActivities'
+  name: 'myActivities'
 }
 </script>
 

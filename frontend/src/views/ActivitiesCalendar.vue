@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'CalActi'
+  name: 'calActi'
 }
 </script>
 
