@@ -1,5 +1,5 @@
 <template>
-  <footer class="lien">
+  <footer>
     <hr>
     <p>Contact ASBL :</p>
     <ul>
@@ -18,11 +18,10 @@ export default {
 
 <style>
 
-footer.lien {
-  background-color: rgba(0, 0, 0, 0.79);
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
 }
 
 a {

@@ -23,21 +23,23 @@ export default {
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
 
-.app {
-    min-height: 100vh;
-    position: relative;
-    background-color: #fff;
+.App {
+  display: grid;
+  grid-template-rows: 7%;
+  gap: 1rem;
+  min-height: 100vh;
+  height: 100%;
+  background: rgb(130, 129, 129);
+  background: linear-gradient(175deg, #FFF 0%, #FFF 25%, rgba(0,212,255,0.70) 100%);
 }
 
-.container {
-    padding: 0 20px;
-    max-width: 1140px;
-    margin: 0 auto;
+img {
+  border: 2px solid;
+  border-radius: 15%;
 }
 
 </style>

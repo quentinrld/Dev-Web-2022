@@ -7,8 +7,8 @@
             <ul v-show="!mobile" class="navigation">
                 <li><router-link class="link" :to="{ name: 'home'}">Accueil</router-link></li>
                 <li><router-link class="link" :to="{ name: 'activities'}">Activités</router-link></li>
-                <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
-                <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li>
+                <!-- <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
+                <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li> -->
                 <li><router-link class="link" :to="{ name: 'contacts'}">Contact</router-link></li>
                 <li><router-link class="link" :to="{ name: 'login'}"><i class="fa fa-sign-in" aria-hidden="true"></i></router-link></li>
             </ul>
@@ -17,11 +17,12 @@
             </div>
             <transition name="mobile-nav">
                 <ul v-show="mobileNav" class="dropdown-nav">
-                    <li><router-link class="link" :to="{ name: 'home'}">Accueil</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'activities'}">Activités</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li>
-                    <li><router-link class="link" :to="{ name: 'contacts'}">Contact</router-link></li>
+                  <li><router-link class="link" :to="{ name: 'home'}">Accueil</router-link></li>
+                  <li><router-link class="link" :to="{ name: 'activities'}">Activités</router-link></li>
+                  <!-- <li><router-link class="link" :to="{ name: 'profile'}">Profil</router-link></li>
+                  <li><router-link class="link" :to="{ name: 'dons'}">Dons</router-link></li> -->
+                  <li><router-link class="link" :to="{ name: 'contacts'}">Contact</router-link></li>
+                  <li><router-link class="link" :to="{ name: 'login'}"><i class="fa fa-sign-in" aria-hidden="true"></i></router-link></li>
                 </ul>
             </transition>
         </nav>
@@ -76,6 +77,7 @@ export default {
 <style lang="scss" scoped>
 
     header {
+        margin-bottom: auto;
         background-color: rgba(0, 0, 0, 0.78);
         z-index: 99;
         width: 100%;

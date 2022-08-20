@@ -10,7 +10,7 @@
     </form>
     <demo-grid :filter-key="searchQuery"></demo-grid>
   </div>
-  <div class="contact">
+  <main class="grid">
   <table>
     <caption><h1> Contact de l'ASBL </h1></caption>
     <tr id="contactHead">
@@ -26,7 +26,7 @@
       <td>{{contacts.actname}}</td>
     </tr>
   </table>
-  </div>
+  </main>
   </body>
 </template>
 
@@ -37,7 +37,14 @@ export default {
   name: 'contact',
   data() {
     return {
-      contact: [],
+      contact: [
+        {
+          userLastName: "Geonet",
+          userName: "Antoine",
+          mailAdd: "eniotna@scarlet.be",
+          actname: "Tennis"
+        }
+      ],
       error: '',
       text: ''
     }
@@ -84,40 +91,11 @@ export default {
 </script>
 
 <style>
-.contact {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-th {
-  border: 1px solid black; 
-  background-color: rgb(84, 102, 219);
-  border-radius: 5px;
+
+tr {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
   text-align: center;
-  width: 300px;
-  height: 50px;
-  font-size: 25px;
 }
-td {
-  border: 1px solid black; 
-  background-color: rgb(206, 212, 248);
-  border-radius: 5px;
-  text-align: center;
-  width: 300px;
-  height: 50px;
-  font-size: 20px;
-};
-.lien {
-  position: absolute;
-  width: 100%;
-  height: 90px;
-  left: 5px;
-  bottom: 0px;
-}
-li {
-  left: 20px;
-}
-  
 
 </style>

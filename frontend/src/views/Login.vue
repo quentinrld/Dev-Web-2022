@@ -1,9 +1,8 @@
 <template>
 <body>
-  <div class="log">
-  <p class="error" v-if="error">{{ error }}</p>
-    <div class="login">
-      <h3 class="connection">Connection</h3>
+  <main class="grid">
+    <div class="form">
+      <h2 class="connection">Connection</h2>
       <form action="http://localhost:3000/login" method="post">
         <label id="labmail" for="email">Email</label>
         <input class="email" type="email" id="email" name="email">
@@ -11,9 +10,10 @@
         <input class="password" type="password" id="password" name="password">
         <input type="submit" value="Se connecter">
       </form>
-    <button id="newuser" @click="$router.push({name: 'signin'})">Créer un compte</button>
+      <button id="newuser" @click="$router.push({name: 'signin'})">Créer un compte</button>
     </div>
-  </div>
+    <p class="error" v-if="error">{{ error }}</p>
+  </main>
 </body>
 </template>
 
@@ -32,18 +32,21 @@ export default {
 
 <style>
 
-.login {
+.form {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 form {
-  padding: 1%;
-  width: 15%;
-}
-
-form input {
-  margin: 0 0.9% 0 0.9%;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 </style>
